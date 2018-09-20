@@ -12,7 +12,7 @@ import MobileSearch from '../components/MobileSearch';
 import StatusWelcome from '../components/Welcome';
 
 storiesOf('Welcome', module)
-  .add('To Status-UI', () => <StatusWelcome />)
+  .add('To Status-Storybook', () => <StatusWelcome />)
   .add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
 storiesOf('MobileButton', module)
