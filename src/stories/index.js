@@ -8,6 +8,7 @@ import { linkTo } from '@storybook/addon-links';
 import { Button, Welcome } from '@storybook/react/demo';
 import Typography from '@material-ui/core/Typography';
 import MobileButton from '../components/MobileButton';
+import MobileSearch from '../components/MobileSearch';
 import StatusWelcome from '../components/Welcome';
 
 storiesOf('Welcome', module)
@@ -17,6 +18,11 @@ storiesOf('Welcome', module)
 storiesOf('MobileButton', module)
   .add('default', () => <MobileButton />)
   .add('with text', () => <MobileButton text="With Text" onClick={action('clicked')}/>)
+
+storiesOf('MobileSearch', module)
+  .add('default', () => <MobileSearch />)
+  .add('wide', () => <MobileSearch wide />)
+  .add('placeholder', () => <MobileSearch placeholder="placeholder" />)
 
 storiesOf('Typography', module)
   .add('Display 4', () =>
