@@ -4,6 +4,7 @@ import 'typeface-roboto';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
+import { withKnobs, text, boolean, number, object } from '@storybook/addon-knobs/react';
 
 import { Button, Welcome } from '@storybook/react/demo';
 import Typography from '@material-ui/core/Typography';
@@ -16,10 +17,12 @@ storiesOf('Welcome', module)
   .add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
 storiesOf('MobileButton', module)
+  .addDecorator(withKnobs)
   .add('default', () => <MobileButton />)
-  .add('with text', () => <MobileButton text="With Text" onClick={action('clicked')}/>)
+  .add('with text', () => <MobileButton text={text('Text', 'with text')} onClick={action('clicked')}/>)
+  .add('with custom styling', () => <MobileButton text={text('Text', 'with custom styling')} style={object('Styles', { margin: '10px 0 0 35%' })} onClick={action('clicked')}/>)
 
-storiesOf('MobileSearch', module)
+    storiesOf('MobileSearch', module)
   .add('default', () => <MobileSearch />)
   .add('wide', () => <MobileSearch wide />)
   .add('placeholder', () => <MobileSearch placeholder="placeholder" />)
