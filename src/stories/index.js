@@ -9,6 +9,7 @@ import { withKnobs, text, boolean, number, object } from '@storybook/addon-knobs
 import { Button, Welcome } from '@storybook/react/demo';
 import Typography from '@material-ui/core/Typography';
 import MobileButton from '../components/MobileButton';
+import IconedButton from '../components/IconedButton';
 import MobileSearch from '../components/MobileSearch';
 import StatusWelcome from '../components/Welcome';
 
@@ -22,7 +23,11 @@ storiesOf('MobileButton', module)
   .add('with text', () => <MobileButton text={text('Text', 'with text')} onClick={action('clicked')}/>)
   .add('with custom styling', () => <MobileButton text={text('Text', 'with custom styling')} style={object('Styles', { margin: '10px 0 0 35%' })} onClick={action('clicked')}/>)
 
-    storiesOf('MobileSearch', module)
+storiesOf('IconedButton', module)
+  .addDecorator(withKnobs)
+  .add('default', () => <IconedButton color={text('color (name or hex)', 'white')} backgroundColor={text('background-color', '#00352c')} />);
+
+storiesOf('MobileSearch', module)
   .add('default', () => <MobileSearch />)
   .add('wide', () => <MobileSearch wide />)
   .add('placeholder', () => <MobileSearch placeholder="placeholder" />)
