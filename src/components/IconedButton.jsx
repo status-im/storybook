@@ -22,19 +22,12 @@ const styles = theme => ({
   },
   iconSmall: {
     fontSize: 20,
-  },
-  starIcon: {
-    backgroundColor: '#00352c',
-    '&:hover': {
-      backgroundColor: '#00352c',
-    },
-    color: 'white'
   }
 });
 
 function IconLabelButtons(props) {
-  const { classes } = props;
-  const styling = { color: props.color, backgroundColor: props.backgroundColor };
+  const { classes, color, backgroundColor, borderRadius } = props;
+  const styling = { color, backgroundColor, borderRadius };
   return (
     <div>
       <Button variant="contained" size="small" className={classes.button, classes.starIcon} style={styling}>

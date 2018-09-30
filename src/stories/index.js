@@ -12,6 +12,7 @@ import MobileButton from '../components/MobileButton';
 import IconedButton from '../components/IconedButton';
 import MobileSearch from '../components/MobileSearch';
 import StatusWelcome from '../components/Welcome';
+import ChatyBase from '../components/ChatyBase';
 
 storiesOf('Welcome', module)
   .add('To Status-Storybook', () => <StatusWelcome />)
@@ -31,6 +32,12 @@ storiesOf('MobileSearch', module)
   .add('default', () => <MobileSearch />)
   .add('wide', () => <MobileSearch wide />)
   .add('placeholder', () => <MobileSearch placeholder="placeholder" />)
+
+storiesOf('ChatyBase', module)
+  .addDecorator(withKnobs)
+  .add('default', () => <ChatyBase
+                          component={<IconedButton color={text('color (name or hex)', 'white')} backgroundColor={text('background-color', '#00010D')} borderRadius={0}/>}
+                          borderWidth={number('tag width', 20)} />)
 
 storiesOf('Typography', module)
   .add('Display 4', () =>
