@@ -14,6 +14,7 @@ import MobileSearch from '../components/MobileSearch';
 import StatusWelcome from '../components/Welcome';
 import ChatyBase from '../components/ChatyBase';
 import DesktopButton from '../components/desktop/Button';
+import CenterWrapper from '../components/utils/CenterWrapper';
 
 storiesOf('Welcome', module)
   .add('To Status-Storybook', () => <StatusWelcome />)
@@ -22,11 +23,13 @@ storiesOf('Welcome', module)
 storiesOf('DesktopButton', module)
   .addDecorator(withKnobs)
   .add('default', () =>
-    <DesktopButton
-      text={text('Text', 'Your text here')}
-      active={boolean('active', true)}
-      style={object('Styles', { margin: '10px 0 0 35%' })}
-      onClick={action('clicked')}/>
+    <CenterWrapper>
+      <DesktopButton
+        text={text('Text', 'Your text here')}
+        active={boolean('active', true)}
+        style={object('Styles', {})}
+        onClick={action('clicked')}/>
+    </CenterWrapper>
   )
 
 storiesOf('MobileButton', module)
