@@ -4,7 +4,7 @@ import 'typeface-roboto';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
-import { withKnobs, text, boolean, number, object } from '@storybook/addon-knobs/react';
+import { withKnobs, text, boolean, number, object, select } from '@storybook/addon-knobs/react';
 
 import { Button, Welcome } from '@storybook/react/demo';
 import Typography from '@material-ui/core/Typography';
@@ -32,11 +32,14 @@ storiesOf('DesktopButton', module)
     </CenterWrapper>
   )
 
-storiesOf('MobileButton', module)
+const buttonTypes = { primary: 'primary', secondary: 'secondary', next: 'next', previous: 'previous' };
+storiesOf('Button', module)
   .addDecorator(withKnobs)
-  .add('default', () => <MobileButton />)
-  .add('with text', () => <MobileButton text={text('Text', 'with text')} onClick={action('clicked')}/>)
-  .add('with custom styling', () => <MobileButton text={text('Text', 'with custom styling')} style={object('Styles', { margin: '10px 0 0 35%' })} onClick={action('clicked')}/>)
+  .add('Select Type', () =>
+    <CenterWrapper>
+      <MobileButton text={text('Text', 'Label')} style={object('Styles', {})} onClick={action('clicked')} buttonType={select('Button Type', buttonTypes, 'primary')} />
+    </CenterWrapper>
+  )
 
 storiesOf('IconedButton', module)
   .addDecorator(withKnobs)
