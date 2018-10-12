@@ -13,10 +13,21 @@ import IconedButton from '../components/IconedButton';
 import MobileSearch from '../components/MobileSearch';
 import StatusWelcome from '../components/Welcome';
 import ChatyBase from '../components/ChatyBase';
+import DesktopButton from '../components/desktop/Button';
 
 storiesOf('Welcome', module)
   .add('To Status-Storybook', () => <StatusWelcome />)
   .add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
+
+storiesOf('DesktopButton', module)
+  .addDecorator(withKnobs)
+  .add('default', () =>
+    <DesktopButton
+      text={text('Text', 'Your text here')}
+      active={boolean('active', true)}
+      style={object('Styles', { margin: '10px 0 0 35%' })}
+      onClick={action('clicked')}/>
+  )
 
 storiesOf('MobileButton', module)
   .addDecorator(withKnobs)
@@ -95,3 +106,4 @@ storiesOf('Typography', module)
       Button
     </Typography>
   )
+
