@@ -15,6 +15,9 @@ import StatusWelcome from '../components/Welcome';
 import ChatyBase from '../components/ChatyBase';
 import DesktopButton from '../components/desktop/Button';
 import CenterWrapper from '../components/utils/CenterWrapper';
+import Toolbar from '../components/Toolbar';
+import Tabbar from '../components/Tabbar';
+import Navigation from '../components/Navigation'
 
 storiesOf('Welcome', module)
   .add('To Status-Storybook', () => <StatusWelcome />)
@@ -55,6 +58,15 @@ storiesOf('ChatyBase', module)
   .add('default', () => <ChatyBase
                           component={<IconedButton color={text('color (name or hex)', 'white')} backgroundColor={text('background-color', '#00010D')} borderRadius={0}/>}
                           borderWidth={number('tag width', 20)} />)
+
+storiesOf('Toolbar', module)
+  .add('default', () => <Toolbar href="#" />)
+
+storiesOf('Tab Bar', module)
+  .add('default', () => <Tabbar />)
+
+storiesOf('Navigation', module)
+  .add('default', () => <Navigation />)
 
 storiesOf('Typography', module)
   .add('Display 4', () =>
@@ -112,4 +124,3 @@ storiesOf('Typography', module)
       Button
     </Typography>
   )
-
