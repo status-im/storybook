@@ -66,7 +66,12 @@ storiesOf('Tab Bar', module)
   .add('default', () => <Tabbar />)
 
 storiesOf('Navigation', module)
-  .add('default', () => <Navigation />)
+  .add('default', () =>
+    <Navigation
+      title="Title"
+      details="Subtitle"
+    />
+  )
 
 storiesOf('Typography', module)
   .add('Display 4', () =>
