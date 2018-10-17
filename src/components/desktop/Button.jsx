@@ -14,6 +14,7 @@ const styles = theme => ({
     boxShadow: '0px 2px 4px rgba(43, 59, 71, 0.124066)'
   }
 });
+
 const MobileButton = ({ classes, text, type, style, active, ...props }) => (
   <Fragment>
     <Button

@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
-import IconButton from './IconedButton';
 import { triangle } from 'polished';
 
 const TriDiv = styled.div`
