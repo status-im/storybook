@@ -9,7 +9,8 @@ import MoreHoriz from '@material-ui/icons/MoreHoriz';
 
 const styles = {
   root: {
-    flexGrow: 1
+    flexGrow: 1,
+    boxShadow: 'none'
   },
   grow: {
     flexGrow: 1,
@@ -21,29 +22,60 @@ const styles = {
   },
 };
 
-function Navigation({ classes, title, details, style, ...props }) {
-  return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton className={classes.menuButton} color="inherit" {...props}>
-            <ChevronLeft />
-          </IconButton>
-          <Typography align="center" className={classes.grow} style={{ marginTop: 10 }}>
-            <Typography variant="title" >
-              {title}
-            </Typography>
-            <Typography variant="subheading" style={{ fontSize: 'small', fontWeight: 300 }}>
-              {details}
-            </Typography>
+function Navigation({
+  classes, prymary, title, details, style, handlePreviousClick, menu, handleMenuClick, ...props
+}) {
+  const backGroundColor = prymary ? '#4360DF' : 'white'
+  const childrenColor = prymary ? 'white' : 'black'
+
+  const detailsTypography = () => (
+    details
+      ? (
+          <Typography variant="subheading" style={{ color: childrenColor }}>
+            {details}
           </Typography>
-          <IconButton className={classes.menuButton} color="inherit" {...props}>
+        )
+      : false
+  )
+
+  const menuIcon = () => (
+    menu
+      ? (
+          <IconButton
+            className={classes.menuButton}
+            onClick={(e) => handleMenuClick(e)}
+            style={{ color: childrenColor }}
+          >
             <MoreHoriz />
           </IconButton>
-        </Toolbar>
-      </AppBar>
-    </div>
-  );
+        )
+      : false
+  )
+
+  return (
+    <AppBar
+      position="static"
+      className={classes.root}
+      style={{ backgroundColor: backGroundColor, ...style }}
+    >
+      <Toolbar>
+        <IconButton
+          className={classes.menuButton}
+          onClick={(e) => handlePreviousClick(e)}
+          style={{ color: childrenColor }}
+        >
+          <ChevronLeft />
+        </IconButton>
+        <div align="center" className={classes.grow}>
+          <Typography variant="title" style={{ color: childrenColor }}>
+            {title}
+          </Typography>
+          { detailsTypography() }
+        </div>
+        { menuIcon() }
+      </Toolbar>
+    </AppBar>
+  )
 }
 
 export default withStyles(styles)(Navigation);

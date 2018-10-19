@@ -4,7 +4,7 @@ import 'typeface-roboto';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
-import { withKnobs, text, boolean, number, object, select } from '@storybook/addon-knobs/react';
+import { withBackgrounds, withKnobs, text, boolean, number, object, select } from '@storybook/addon-knobs/react';
 
 import { Button, Welcome } from '@storybook/react/demo';
 import Typography from '@material-ui/core/Typography';
@@ -66,10 +66,15 @@ storiesOf('Tab Bar', module)
   .add('default', () => <Tabbar />)
 
 storiesOf('Navigation', module)
+  .addDecorator(withKnobs)
   .add('default', () =>
     <Navigation
-      title="Title"
-      details="Subtitle"
+      handlePreviousClick={action('clicked')}
+      title={text('Title', 'Title text here')}
+      details={text('Subtitle', 'Subtitle text')}
+      prymary={boolean('Prymary Color', true)}
+      menu={boolean('Menu', true)}
+      handleMenuClick={action('clicked')}
     />
   )
 

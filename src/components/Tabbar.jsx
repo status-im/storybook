@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
@@ -10,10 +10,11 @@ import Mood from '@material-ui/icons/Mood';
 const styles = {
   root: {
     flexGrow: 1,
+    boxShadow: 'none'
   },
 };
 
-class Tabbar extends React.Component {
+class Tabbar extends Component {
   state = {
     value: 0,
   };
@@ -29,7 +30,7 @@ class Tabbar extends React.Component {
     return (
       <Paper className={classes.root}>
         <Tabs
-          value={this.state.value}
+          value={value}
           onChange={this.handleChange}
           indicatorColor="white"
           textColor="primary"
