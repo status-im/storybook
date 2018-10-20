@@ -18,6 +18,7 @@ import CenterWrapper from '../components/utils/CenterWrapper';
 import Toolbar from '../components/Toolbar';
 import Tabbar from '../components/Tabbar';
 import Navigation from '../components/Navigation'
+import Chatbar from '../components/Chatbar'
 
 storiesOf('Welcome', module)
   .add('To Status-Storybook', () => <StatusWelcome />)
@@ -133,4 +134,18 @@ storiesOf('Typography', module)
     <Typography variant="button" gutterBottom>
       Button
     </Typography>
+  )
+
+storiesOf('Chatbar', module)
+  .addDecorator(withKnobs)
+  .add('default', () =>
+    <Chatbar
+      handlePreviousClick={action('clicked')}
+      name={text('Name', 'Username')}
+      description={text('Description', 'Subtitle text')}
+      prymary={boolean('Prymary Color', true)}
+      menu={boolean('Menu', true)}
+      handleMenuClick={action('clicked')}
+      unreadMessages={number('Unread Messages', 10)}
+    />
   )
