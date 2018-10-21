@@ -19,6 +19,7 @@ import Toolbar from '../components/Toolbar';
 import Tabbar from '../components/Tabbar';
 import Navigation from '../components/Navigation'
 import Chatbar from '../components/Chatbar'
+import SnackbarContent from '../components/SnackbarContent'
 
 storiesOf('Welcome', module)
   .add('To Status-Storybook', () => <StatusWelcome />)
@@ -59,25 +60,6 @@ storiesOf('ChatyBase', module)
   .add('default', () => <ChatyBase
                           component={<IconedButton color={text('color (name or hex)', 'white')} backgroundColor={text('background-color', '#00010D')} borderRadius={0}/>}
                           borderWidth={number('tag width', 20)} />)
-
-storiesOf('Toolbar', module)
-  .add('default', () => <Toolbar href="#" />)
-
-storiesOf('Tab Bar', module)
-  .add('default', () => <Tabbar />)
-
-storiesOf('Navigation', module)
-  .addDecorator(withKnobs)
-  .add('default', () =>
-    <Navigation
-      handlePreviousClick={action('clicked')}
-      title={text('Title', 'Title text here')}
-      details={text('Subtitle', 'Subtitle text')}
-      prymary={boolean('Prymary Color', true)}
-      menu={boolean('Menu', true)}
-      handleMenuClick={action('clicked')}
-    />
-  )
 
 storiesOf('Typography', module)
   .add('Display 4', () =>
@@ -136,6 +118,39 @@ storiesOf('Typography', module)
     </Typography>
   )
 
+storiesOf('Toolbar', module)
+  .addDecorator(withKnobs)
+  .add('default', () =>
+    <Toolbar
+      href={text('Link', 'https://github.com/status-im/storybook')}
+      content={text('Title', 'Your content here')}
+      handleButtonClick={action('clicked')}
+      style={object('Styles', {})}
+    />
+  )
+
+storiesOf('Tab Bar', module)
+  .addDecorator(withKnobs)
+  .add('default', () =>
+    <Tabbar
+      style={object('Styles', {})}
+    />
+  )
+
+storiesOf('Navigation', module)
+  .addDecorator(withKnobs)
+  .add('default', () =>
+    <Navigation
+      handlePreviousClick={action('clicked')}
+      title={text('Title', 'Title text here')}
+      details={text('Subtitle', 'Subtitle text')}
+      prymary={boolean('Prymary Color', true)}
+      menu={boolean('Menu', true)}
+      handleMenuClick={action('clicked')}
+      style={object('Styles', {})}
+    />
+  )
+
 storiesOf('Chatbar', module)
   .addDecorator(withKnobs)
   .add('default', () =>
@@ -147,5 +162,16 @@ storiesOf('Chatbar', module)
       menu={boolean('Menu', true)}
       handleMenuClick={action('clicked')}
       unreadMessages={number('Unread Messages', 10)}
+      style={object('Styles', {})}
+    />
+  )
+
+storiesOf('Snackbar Content', module)
+  .addDecorator(withKnobs)
+  .add('default', () =>
+    <SnackbarContent
+      handleButtonClick={action('clicked')}
+      onClose={action('clicked')}
+      style={object('Styles', {})}
     />
   )
