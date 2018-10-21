@@ -10,6 +10,7 @@ import { withStyles } from '@material-ui/core/styles';
 const styles = {
   variant: {
     backgroundColor: 'white',
+    boxShadow: 'none'
   },
   icon: {
     fontSize: 20,
