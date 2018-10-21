@@ -16,13 +16,11 @@ const styles = {
     color: '#4360DF'
   },
   menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
     color: '#4360DF'
   },
 };
 
-function Bar({ classes, content, handleButtonClick, type, href, style, ...props }) {
+function Bar({ classes, content, handleNextClick, type, href, style, ...props }) {
   return (
     <div className={classes.root}>
       <AppBar position="static" color="inherit">
@@ -36,7 +34,7 @@ function Bar({ classes, content, handleButtonClick, type, href, style, ...props 
             className={classes.menuButton}
             type={type}
             size="large"
-            onClick={(e) => handleButtonClick(e)}
+            onClick={(e) => handleNextClick(e)}
             {...props}
           >
             <Typography variant="subheading" className={classes.grow}>

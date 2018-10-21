@@ -31,10 +31,8 @@ const styles = {
 };
 
 function Chatbar({
-  classes, prymary, name, description, style, handlePreviousClick, menu, handleMenuClick, unreadMessages, ...props
+  classes, prymary, name, avatarUrl, description, style, handlePreviousClick, menu, handleMenuClick, unreadMessages, ...props
 }) {
-  const avatarUrl = 'https://avatars0.githubusercontent.com/u/18357049?s=400&u=efc262623265b5b527a8570faa590f9f29ae36d5&v=4'
-
   const backGroundColor = prymary ? '#4360DF' : 'white'
   const childrenColor = prymary ? 'white' : 'black'
 
