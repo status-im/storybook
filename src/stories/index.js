@@ -4,7 +4,7 @@ import 'typeface-roboto';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
-import { withKnobs, text, boolean, number, object, select } from '@storybook/addon-knobs/react';
+import { withBackgrounds, withKnobs, text, boolean, number, object, select } from '@storybook/addon-knobs/react';
 
 import { Button, Welcome } from '@storybook/react/demo';
 import Typography from '@material-ui/core/Typography';
@@ -15,6 +15,11 @@ import StatusWelcome from '../components/Welcome';
 import ChatyBase from '../components/ChatyBase';
 import DesktopButton from '../components/desktop/Button';
 import CenterWrapper from '../components/utils/CenterWrapper';
+import Toolbar from '../components/Toolbar';
+import Tabbar from '../components/Tabbar';
+import Navigation from '../components/Navigation'
+import Chatbar from '../components/Chatbar'
+import SnackbarContent from '../components/SnackbarContent'
 import BallotResult from '../components/BallotResult';
 
 storiesOf('Welcome', module)
@@ -112,6 +117,65 @@ storiesOf('Typography', module)
     <Typography variant="button" gutterBottom>
       Button
     </Typography>
+  )
+
+storiesOf('Toolbar', module)
+  .addDecorator(withKnobs)
+  .add('default', () =>
+    <Toolbar
+      href={text('Link', 'https://github.com/status-im/storybook')}
+      content={text('Title', 'Your content here')}
+      handleNextClick={action('clicked')}
+      style={object('Styles', {})}
+    />
+  )
+
+storiesOf('Tab Bar', module)
+  .addDecorator(withKnobs)
+  .add('default', () =>
+    <Tabbar
+      style={object('Styles', {})}
+    />
+  )
+
+storiesOf('Navigation', module)
+  .addDecorator(withKnobs)
+  .add('default', () =>
+    <Navigation
+      handlePreviousClick={action('clicked')}
+      title={text('Title', 'Title text here')}
+      details={text('Subtitle', 'Subtitle text')}
+      primary={boolean('Primary Color', true)}
+      menu={boolean('Menu', true)}
+      handleMenuClick={action('clicked')}
+      style={object('Styles', {})}
+    />
+  )
+
+storiesOf('Chatbar', module)
+  .addDecorator(withKnobs)
+  .add('default', () =>
+    <Chatbar
+      handlePreviousClick={action('clicked')}
+      name={text('Name', 'Username')}
+      avatarUrl={text('Avatar Url', 'https://avatars0.githubusercontent.com/u/18357049?s=400&u=efc262623265b5b527a8570faa590f9f29ae36d5&v=4')}
+      description={text('Description', 'Subtitle text')}
+      primary={boolean('Primary Color', true)}
+      menu={boolean('Menu', true)}
+      handleMenuClick={action('clicked')}
+      unreadMessages={number('Unread Messages', 10)}
+      style={object('Styles', {})}
+    />
+  )
+
+storiesOf('Snackbar Content', module)
+  .addDecorator(withKnobs)
+  .add('default', () =>
+    <SnackbarContent
+      handleButtonClick={action('clicked')}
+      onClose={action('clicked')}
+      style={object('Styles', {})}
+    />
   )
 
 storiesOf('BallotResult', module)
