@@ -20,6 +20,7 @@ import Tabbar from '../components/Tabbar';
 import Navigation from '../components/Navigation'
 import Chatbar from '../components/Chatbar'
 import SnackbarContent from '../components/SnackbarContent'
+import BallotResult from '../components/BallotResult';
 
 storiesOf('Welcome', module)
   .add('To Status-Storybook', () => <StatusWelcome />)
@@ -175,4 +176,12 @@ storiesOf('Snackbar Content', module)
       onClose={action('clicked')}
       style={object('Styles', {})}
     />
+  )
+
+storiesOf('BallotResult', module)
+  .addDecorator(withKnobs)
+  .add('Default', () =>
+    <CenterWrapper>
+      <BallotResult title={text('Text', 'Your text here')} quadraticVotes={number('quadraticVotes', 25)} tokenTotal={number('tokenTotal', 65)} totalVotes={number('totalVotes', 100)} />
+    </CenterWrapper>
   )
