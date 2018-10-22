@@ -31,10 +31,10 @@ const styles = {
 };
 
 function Chatbar({
-  classes, prymary, name, avatarUrl, description, style, handlePreviousClick, menu, handleMenuClick, unreadMessages, ...props
+  classes, primary, name, avatarUrl, description, style, handlePreviousClick, menu, handleMenuClick, unreadMessages, ...props
 }) {
-  const backGroundColor = prymary ? '#4360DF' : 'white'
-  const childrenColor = prymary ? 'white' : 'black'
+  const backGroundColor = primary ? '#4360DF' : 'white'
+  const childrenColor = primary ? 'white' : 'black'
 
   const descriptionTypography = () => (
     description

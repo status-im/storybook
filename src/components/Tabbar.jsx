@@ -12,6 +12,13 @@ const styles = {
     flexGrow: 1,
     boxShadow: 'none'
   },
+  flexContainer: {
+    display: 'flex',
+    justifyContent: 'space-between'
+  },
+  tabsIndicator: {
+    backgroundColor: 'white',
+  },
 };
 
 class Tabbar extends Component {
@@ -30,11 +37,10 @@ class Tabbar extends Component {
     return (
       <Paper className={classes.root}>
         <Tabs
+          classes={{ flexContainer: classes.flexContainer, indicator: classes.tabsIndicator }}
           value={value}
           onChange={this.handleChange}
-          indicatorColor="white"
           textColor="primary"
-          centered
         >
           <Tab label="Home" icon={<AlbumOutlinedIcon />} />
           <Tab label="Wallet" icon={<AccountBalanceWalletOutlinedIcon />} />

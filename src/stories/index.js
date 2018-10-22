@@ -144,7 +144,7 @@ storiesOf('Navigation', module)
       handlePreviousClick={action('clicked')}
       title={text('Title', 'Title text here')}
       details={text('Subtitle', 'Subtitle text')}
-      prymary={boolean('Prymary Color', true)}
+      primary={boolean('Primary Color', true)}
       menu={boolean('Menu', true)}
       handleMenuClick={action('clicked')}
       style={object('Styles', {})}
@@ -159,7 +159,7 @@ storiesOf('Chatbar', module)
       name={text('Name', 'Username')}
       avatarUrl={text('Avatar Url', 'https://avatars0.githubusercontent.com/u/18357049?s=400&u=efc262623265b5b527a8570faa590f9f29ae36d5&v=4')}
       description={text('Description', 'Subtitle text')}
-      prymary={boolean('Prymary Color', true)}
+      primary={boolean('Primary Color', true)}
       menu={boolean('Menu', true)}
       handleMenuClick={action('clicked')}
       unreadMessages={number('Unread Messages', 10)}

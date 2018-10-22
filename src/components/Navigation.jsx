@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -23,10 +24,10 @@ const styles = {
 };
 
 function Navigation({
-  classes, prymary, title, details, style, handlePreviousClick, menu, handleMenuClick, ...props
+  classes, primary, title, details, style, handlePreviousClick, menu, handleMenuClick, ...props
 }) {
-  const backGroundColor = prymary ? '#4360DF' : 'white'
-  const childrenColor = prymary ? 'white' : 'black'
+  const backGroundColor = primary ? '#4360DF' : 'white'
+  const childrenColor = primary ? 'white' : 'black'
 
   const detailsTypography = () => (
     details
@@ -77,5 +78,26 @@ function Navigation({
     </AppBar>
   )
 }
+
+Navigation.defaultProps = {
+  classes: {},
+  style: {},
+  primary: false,
+  details: '',
+  menu: false,
+  handleMenuClick: () => {}
+}
+
+Navigation.propTypes = {
+  title: PropTypes.string.isRequired,
+  handlePreviousClick: PropTypes.func.isRequired,
+  classes: PropTypes.object,
+  style: PropTypes.shape(),
+  primary: PropTypes.bool,
+  details: PropTypes.string,
+  menu: PropTypes.bool,
+  handleMenuClick: PropTypes.func
+};
+
 
 export default withStyles(styles)(Navigation);
