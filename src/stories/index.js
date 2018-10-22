@@ -15,6 +15,7 @@ import StatusWelcome from '../components/Welcome';
 import ChatyBase from '../components/ChatyBase';
 import DesktopButton from '../components/desktop/Button';
 import CenterWrapper from '../components/utils/CenterWrapper';
+import BallotResult from '../components/BallotResult';
 
 storiesOf('Welcome', module)
   .add('To Status-Storybook', () => <StatusWelcome />)
@@ -113,3 +114,10 @@ storiesOf('Typography', module)
     </Typography>
   )
 
+storiesOf('BallotResult', module)
+  .addDecorator(withKnobs)
+  .add('Default', () =>
+    <CenterWrapper>
+      <BallotResult title='test' quadraticVotes={5} tokenTotal={15} totalVotes={100} />
+    </CenterWrapper>
+  )
