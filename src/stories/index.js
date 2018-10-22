@@ -118,6 +118,6 @@ storiesOf('BallotResult', module)
   .addDecorator(withKnobs)
   .add('Default', () =>
     <CenterWrapper>
-      <BallotResult title='test' quadraticVotes={5} tokenTotal={15} totalVotes={100} />
+      <BallotResult title={text('Text', 'Your text here')} quadraticVotes={number('quadraticVotes', 25)} tokenTotal={number('tokenTotal', 65)} totalVotes={number('totalVotes', 100)} />
     </CenterWrapper>
   )
