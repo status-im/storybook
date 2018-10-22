@@ -20,7 +20,8 @@ import Tabbar from '../components/Tabbar';
 import Navigation from '../components/Navigation'
 import Chatbar from '../components/Chatbar'
 import SnackbarContent from '../components/SnackbarContent'
-import BallotResult from '../components/BallotResult';
+import BallotResult from '../components/BallotResult'
+import BottomSheetExample from '../components/BottomSheetExample'
 
 storiesOf('Welcome', module)
   .add('To Status-Storybook', () => <StatusWelcome />)
@@ -184,4 +185,11 @@ storiesOf('BallotResult', module)
     <CenterWrapper>
       <BallotResult title={text('Text', 'Your text here')} quadraticVotes={number('quadraticVotes', 25)} tokenTotal={number('tokenTotal', 65)} totalVotes={number('totalVotes', 100)} />
     </CenterWrapper>
+  )
+
+storiesOf('Bottom Sheet', module)
+  .addDecorator(withKnobs)
+  .add('Default', () =>
+    <BottomSheetExample
+    />
   )
