@@ -59,7 +59,7 @@ class BallotResult extends PureComponent {
       <div>
         <ProgressLarge show={show}>
           <ProgressBar style={{width: votePercentage +'%'}}>
-            <Typography gutterBottom component="h2" onClick={this.showDetails}><span>{votePercentage}%</span> {title}</Typography>
+            <Typography gutterBottom component="h2" onClick={this.showDetails}><span>{Math.floor(votePercentage)}%</span> {title}</Typography>
           </ProgressBar>
         </ProgressLarge>
         {show && <ul>
