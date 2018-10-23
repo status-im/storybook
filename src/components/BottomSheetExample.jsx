@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import BottomSheet from './BottomSheet'
-import Typography from '@material-ui/core/Typography'
+import BottomSheetItem from '../components/BottomSheetItem'
 import Button from '../components/desktop/Button'
 
 class BottomSheetExample extends Component {
@@ -31,29 +31,16 @@ class BottomSheetExample extends Component {
             onRequestClose={() => this.handleBottomOpen()}
             open={open}
         >
-          <Button
-            active
-            onClick={this.handleBottomOpen.bind(this)}
-            text="example item1"
+          <BottomSheetItem
+            handleAddClick={this.handleBottomOpen.bind(this)}
             style={{ margin: '5px' }}
+            content="Add to contacts"
           />
-          <Button
-            active
-            onClick={this.handleBottomOpen.bind(this)}
-            text="example item2"
+          <BottomSheetItem
+            handleAddClick={this.handleBottomOpen.bind(this)}
             style={{ margin: '5px' }}
-          />
-          <Button
-            active
-            onClick={this.handleBottomOpen.bind(this)}
-            text="example item3"
-            style={{ margin: '5px' }}
-          />
-          <Button
-            active
-            onClick={this.handleBottomOpen.bind(this)}
-            text="Click in any to close"
-            style={{ margin: '5px' }}
+            content="Add to contacts"
+            error
           />
         </BottomSheet>
       </div>
