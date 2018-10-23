@@ -22,6 +22,7 @@ import Chatbar from '../components/Chatbar'
 import SnackbarContent from '../components/SnackbarContent'
 import BallotResult from '../components/BallotResult'
 import BottomSheetExample from '../components/BottomSheetExample'
+import BottomSheetItem from '../components/BottomSheetItem'
 
 storiesOf('Welcome', module)
   .add('To Status-Storybook', () => <StatusWelcome />)
@@ -191,5 +192,16 @@ storiesOf('Bottom Sheet', module)
   .addDecorator(withKnobs)
   .add('Default', () =>
     <BottomSheetExample
+    />
+  )
+
+storiesOf('Bottom Sheet Item', module)
+  .addDecorator(withKnobs)
+  .add('Default', () =>
+    <BottomSheetItem
+      handleAddClick={action('clicked')}
+      style={object('Styles', {})}
+      content={text('Content', 'Your content here')}
+      error={boolean('Error', false)}
     />
   )
