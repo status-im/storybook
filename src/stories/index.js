@@ -4,9 +4,10 @@ import 'typeface-roboto';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
-import { withBackgrounds, withKnobs, text, boolean, number, object, select } from '@storybook/addon-knobs/react';
+import { withKnobs, text, boolean, number, object, select } from '@storybook/addon-knobs/react';
 
-import { Button, Welcome } from '@storybook/react/demo';
+import { Welcome } from '@storybook/react/demo';
+import AddIcon from '@material-ui/icons/Add'
 import Typography from '@material-ui/core/Typography';
 import MobileButton from '../components/MobileButton';
 import IconedButton from '../components/IconedButton';
@@ -203,5 +204,6 @@ storiesOf('Bottom Sheet Item', module)
       style={object('Styles', {})}
       content={text('Content', 'Your content here')}
       error={boolean('Error', false)}
+      icon={<AddIcon />}
     />
   )
