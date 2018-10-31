@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import BottomSheet from './BottomSheet'
 import BottomSheetItem from '../components/BottomSheetItem'
 import Button from '../components/desktop/Button'
+import AddIcon from '@material-ui/icons/Add'
+import AlbumOutlinedIcon from '@material-ui/icons/AlbumOutlined';
 
 class BottomSheetExample extends Component {
   state = {
@@ -30,16 +32,17 @@ class BottomSheetExample extends Component {
         <BottomSheet
             onRequestClose={() => this.handleBottomOpen()}
             open={open}
+            contentStyle={{margin: '10px'}}
         >
           <BottomSheetItem
-            handleAddClick={this.handleBottomOpen.bind(this)}
-            style={{ margin: '5px' }}
+            handleOnClick={this.handleBottomOpen.bind(this)}
+            icon={<AddIcon />}
             content="Add to contacts"
           />
           <BottomSheetItem
-            handleAddClick={this.handleBottomOpen.bind(this)}
-            style={{ margin: '5px' }}
+            handleOnClick={this.handleBottomOpen.bind(this)}
             content="Add to contacts"
+            icon={<AlbumOutlinedIcon />}
             error
           />
         </BottomSheet>

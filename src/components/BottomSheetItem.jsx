@@ -2,13 +2,13 @@ import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton'
-import AddIcon from '@material-ui/icons/Add'
 
 const styles = theme => ({
   root: {
     flexGrow: 1,
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    margin: '5px'
   },
   textPrimary: {
     color: '#4360DF',
@@ -20,28 +20,26 @@ const styles = theme => ({
   },
   buttonPrimary: {
     color: '#4360DF',
-    '&:hover': {
-      background: '#4360df26'
-    },
+    background: '#4360df26',
+    marginRight: '10px'
   },
   buttonError: {
     color: '#f53a3a',
-    '&:hover': {
-      background: '#df434326'
-    },
+    background: '#df434326',
+    marginRight: '10px'
   }
 });
 
-function BottomSheetItem({ classes, content, error, handleAddClick, type, href, style, ...props }) {
+function BottomSheetItem({ classes, content, error, icon, handleOnClick, type, href, style, ...props }) {
   return (
     <div className={classes.root}>
       <IconButton
         key="add"
         aria-label="Add"
         className={error ? classes.buttonError : classes.buttonPrimary}
-        onClick={(e) => {handleAddClick(e)}}
+        onClick={(e) => {handleOnClick(e)}}
       >
-        <AddIcon />
+        {icon}
       </IconButton>
       <Typography className={error ? classes.textError : classes.textPrimary}>
         {content}
