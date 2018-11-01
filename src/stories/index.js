@@ -200,7 +200,7 @@ storiesOf('Bottom Sheet Item', module)
   .addDecorator(withKnobs)
   .add('Default', () =>
     <BottomSheetItem
-      handleAddClick={action('clicked')}
+      handleOnClick={action('clicked')}
       style={object('Styles', {})}
       content={text('Content', 'Your content here')}
       error={boolean('Error', false)}
