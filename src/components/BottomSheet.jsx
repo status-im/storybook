@@ -26,7 +26,7 @@ class BottomSheet extends Component {
         borderTopRightRadius: '20px',
         bottom: 0,
         transform: open ? 'translateY(-100%)' : 'translateY(0)',
-        transition: 'all .3s cubic-bezier(0.42, 0, 0.58, 1) 0s',
+        transition: 'all .3s ease 0s',
         top: '100%',
         minHeight: '40%',
         maxHeight: '40%',
@@ -41,7 +41,7 @@ class BottomSheet extends Component {
       },
       contentStyle: {
         display: 'inline-grid',
-        padding: '10px'
+        width: '95%'
       }
     }
   }

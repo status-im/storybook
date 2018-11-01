@@ -8,7 +8,13 @@ const styles = theme => ({
     flexGrow: 1,
     display: 'flex',
     alignItems: 'center',
-    margin: '5px'
+    margin: '5px',
+    cursor: 'pointer',
+    width: '100%',
+    '&:hover': {
+      background: '#4360df26',
+      borderRadius: '20px'
+    }
   },
   textPrimary: {
     color: '#4360DF',
@@ -32,19 +38,21 @@ const styles = theme => ({
 
 function BottomSheetItem({ classes, content, error, icon, handleOnClick, type, href, style, ...props }) {
   return (
-    <div className={classes.root}>
+    <a
+      className={classes.root}
+      onClick={(e) => {handleOnClick(e)}}
+    >
       <IconButton
         key="add"
         aria-label="Add"
         className={error ? classes.buttonError : classes.buttonPrimary}
-        onClick={(e) => {handleOnClick(e)}}
       >
         {icon}
       </IconButton>
       <Typography className={error ? classes.textError : classes.textPrimary}>
         {content}
       </Typography>
-    </div>
+    </a>
   )
 }
 
