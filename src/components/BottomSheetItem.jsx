@@ -10,7 +10,6 @@ const styles = theme => ({
     alignItems: 'center',
     margin: '5px',
     cursor: 'pointer',
-    width: '100%',
     '&:hover': {
       background: '#4360df26',
       borderRadius: '20px'
