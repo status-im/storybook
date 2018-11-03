@@ -1,54 +1,37 @@
-import React, { Component } from 'react'
+import React from 'react'
+import Button from '@material-ui/core/Button'
+import AddIcon from '@material-ui/icons/Add'
 import BottomSheet from './BottomSheet'
 import BottomSheetItem from '../components/BottomSheetItem'
-import Button from '../components/desktop/Button'
-import AddIcon from '@material-ui/icons/Add'
-import AlbumOutlinedIcon from '@material-ui/icons/AlbumOutlined';
 
-class BottomSheetExample extends Component {
+class BottomSheetExample extends React.Component {
   state = {
     open: false
-  }
+  };
 
-  handleBottomOpen = () => {
-    const { open } = this.state
-
+  toggleDrawer = (open) => () => {
     this.setState({
-      open: !open
-    })
-  }
+      open
+    });
+  };
 
   render() {
-    const { open } = this.state
-
-
-    return(
+    return (
       <div>
-        <Button
-          active
-          onClick={this.handleBottomOpen.bind(this)}
-          text="Click to show BottomSheet"
-        />
+        <Button onClick={this.toggleDrawer(true)}>Open Bottom</Button>
         <BottomSheet
-            onRequestClose={() => this.handleBottomOpen()}
-            open={open}
-            contentStyle={{margin: '10px'}}
+          open={this.state.open}
+          toggleDrawer={() => this.toggleDrawer()}
         >
           <BottomSheetItem
-            handleOnClick={this.handleBottomOpen.bind(this)}
+            handleOnClick={() => {}}
+            content="Your content here"
             icon={<AddIcon />}
-            content="Add to contacts"
-          />
-          <BottomSheetItem
-            handleOnClick={this.handleBottomOpen.bind(this)}
-            content="Add to contacts"
-            icon={<AlbumOutlinedIcon />}
-            error
           />
         </BottomSheet>
       </div>
-    )
+    );
   }
 }
 
-export default BottomSheetExample
+export default BottomSheetExample;
