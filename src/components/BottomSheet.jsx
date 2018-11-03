@@ -50,6 +50,7 @@ class BottomSheet extends React.Component {
 
 BottomSheet.propTypes = {
   classes: PropTypes.object,
+  toggleDrawer: PropTypes.func.isRequired
 };
 
 export default withStyles(styles)(BottomSheet);
