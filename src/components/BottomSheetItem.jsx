@@ -8,10 +8,10 @@ const styles = theme => ({
     flexGrow: 1,
     display: 'flex',
     alignItems: 'center',
-    margin: '5px',
+    margin: '8px',
     cursor: 'pointer',
     '&:hover': {
-      background: '#4360df26',
+      background: '#EDEBFC;',
       borderRadius: '20px'
     }
   },
@@ -25,13 +25,13 @@ const styles = theme => ({
   },
   buttonPrimary: {
     color: '#4360DF',
-    background: '#4360df26',
-    marginRight: '10px'
+    background: '#EDEBFC;',
+    marginRight: '8px'
   },
   buttonError: {
     color: '#f53a3a',
     background: '#df434326',
-    marginRight: '10px'
+    marginRight: '8px'
   }
 });
 
