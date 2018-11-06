@@ -1,30 +1,32 @@
-import React from 'react';
-import 'typeface-roboto';
+import React from 'react'
+import 'typeface-roboto'
 
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
-import { withBackgrounds, withKnobs, text, boolean, number, object, select } from '@storybook/addon-knobs/react';
+import { storiesOf } from '@storybook/react'
+import { action } from '@storybook/addon-actions'
+import { linkTo } from '@storybook/addon-links'
+import { withBackgrounds, withKnobs, text, boolean, number, object, select } from '@storybook/addon-knobs/react'
 
-import { Button, Welcome } from '@storybook/react/demo';
-import Typography from '@material-ui/core/Typography';
-import MobileButton from '../components/MobileButton';
-import IconedButton from '../components/IconedButton';
-import MobileSearch from '../components/MobileSearch';
-import StatusWelcome from '../components/Welcome';
-import ChatyBase from '../components/ChatyBase';
-import DesktopButton from '../components/desktop/Button';
-import CenterWrapper from '../components/utils/CenterWrapper';
-import Toolbar from '../components/Toolbar';
-import Tabbar from '../components/Tabbar';
+import { Button, Welcome } from '@storybook/react/demo'
+import Typography from '@material-ui/core/Typography'
+import MobileButton from '../components/MobileButton'
+import IconedButton from '../components/IconedButton'
+import MobileSearch from '../components/MobileSearch'
+import StatusWelcome from '../components/Welcome'
+import ChatyBase from '../components/ChatyBase'
+import DesktopButton from '../components/desktop/Button'
+import CenterWrapper from '../components/utils/CenterWrapper'
+import Toolbar from '../components/Toolbar'
+import Tabbar from '../components/Tabbar'
 import Navigation from '../components/Navigation'
 import Chatbar from '../components/Chatbar'
 import SnackbarContent from '../components/SnackbarContent'
-import BallotResult from '../components/BallotResult';
+import BallotResult from '../components/BallotResult'
+import CustomizedBadge from '../components/Badge'
+
 
 storiesOf('Welcome', module)
   .add('To Status-Storybook', () => <StatusWelcome />)
-  .add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
+  .add('to Storybook', () => <Welcome showApp={linkTo('Button')} />)
 
 storiesOf('DesktopButton', module)
   .addDecorator(withKnobs)
@@ -38,7 +40,7 @@ storiesOf('DesktopButton', module)
     </CenterWrapper>
   )
 
-const buttonTypes = { primary: 'primary', secondary: 'secondary', next: 'next', previous: 'previous' };
+const buttonTypes = { primary: 'primary', secondary: 'secondary', next: 'next', previous: 'previous' }
 storiesOf('Button', module)
   .addDecorator(withKnobs)
   .add('Select Type', () =>
@@ -49,7 +51,7 @@ storiesOf('Button', module)
 
 storiesOf('IconedButton', module)
   .addDecorator(withKnobs)
-  .add('default', () => <IconedButton color={text('color (name or hex)', 'white')} backgroundColor={text('background-color', '#00352c')} />);
+  .add('default', () => <IconedButton color={text('color (name or hex)', 'white')} backgroundColor={text('background-color', '#00352c')} />)
 
 storiesOf('MobileSearch', module)
   .add('default', () => <MobileSearch />)
@@ -184,4 +186,12 @@ storiesOf('BallotResult', module)
     <CenterWrapper>
       <BallotResult title={text('Text', 'Your text here')} quadraticVotes={number('quadraticVotes', 25)} tokenTotal={number('tokenTotal', 65)} totalVotes={number('totalVotes', 100)} />
     </CenterWrapper>
+  )
+storiesOf('Badge', module)
+  .addDecorator(withKnobs)
+  .add('Default', () =>
+    <CustomizedBadge
+      count={number('count', 5)}
+      large={boolean('large', false)}
+    />
   )
