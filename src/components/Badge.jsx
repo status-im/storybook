@@ -32,4 +32,4 @@ CustomizedBadge.propTypes = {
   count: PropTypes.number.isRequired
 }
 
-export default withStyles(styles)(CustomizedBadge);
+export default withStyles(styles)(CustomizedBadge)

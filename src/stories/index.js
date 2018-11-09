@@ -4,9 +4,9 @@ import 'typeface-roboto'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { linkTo } from '@storybook/addon-links'
-import { withBackgrounds, withKnobs, text, boolean, number, object, select } from '@storybook/addon-knobs/react'
+import { withKnobs, text, boolean, number, object, select } from '@storybook/addon-knobs/react'
 
-import { Button, Welcome } from '@storybook/react/demo'
+import { Welcome } from '@storybook/react/demo'
 import Typography from '@material-ui/core/Typography'
 import MobileButton from '../components/MobileButton'
 import IconedButton from '../components/IconedButton'
@@ -22,6 +22,7 @@ import Chatbar from '../components/Chatbar'
 import SnackbarContent from '../components/SnackbarContent'
 import BallotResult from '../components/BallotResult'
 import CustomizedBadge from '../components/Badge'
+import Switch from '../components/Switch'
 
 
 storiesOf('Welcome', module)
@@ -187,11 +188,21 @@ storiesOf('BallotResult', module)
       <BallotResult title={text('Text', 'Your text here')} quadraticVotes={number('quadraticVotes', 25)} tokenTotal={number('tokenTotal', 65)} totalVotes={number('totalVotes', 100)} />
     </CenterWrapper>
   )
+
 storiesOf('Badge', module)
   .addDecorator(withKnobs)
   .add('Default', () =>
     <CustomizedBadge
       count={number('count', 5)}
       large={boolean('large', false)}
+    />
+  )
+
+storiesOf('Switch', module)
+  .addDecorator(withKnobs)
+  .add('Default', () =>
+    <Switch
+      checked={boolean('checked', false)}
+      handleSwitchClick={action('clicked')}
     />
   )
