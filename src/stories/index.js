@@ -24,12 +24,9 @@ import SnackbarContent from '../components/SnackbarContent'
 import BallotResult from '../components/BallotResult'
 import BottomSheetExample from '../components/BottomSheetExample'
 import BottomSheetItem from '../components/BottomSheetItem'
-<<<<<<< HEAD
 import Badge from '../components/Badge'
 import Switch from '../components/Switch'
-
-=======
->>>>>>> c4c695a38a83754936d4f132e0fa4d91fe1cab59
+import CheckBox from '../components/CheckBox'
 
 storiesOf('Welcome', module)
   .add('To Status-Storybook', () => <StatusWelcome />)
@@ -230,4 +227,10 @@ storiesOf('Switch', module)
       checked={boolean('checked', false)}
       handleSwitchClick={action('clicked')}
     />
+  )
+
+storiesOf('Checkbox', module)
+  .addDecorator(withKnobs)
+  .add('Default', () =>
+    <CheckBox />
   )
