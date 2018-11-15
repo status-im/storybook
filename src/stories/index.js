@@ -232,5 +232,9 @@ storiesOf('Switch', module)
 storiesOf('Checkbox', module)
   .addDecorator(withKnobs)
   .add('Default', () =>
-    <CheckBox />
+    <CheckBox
+      checked={boolean('checked', false)}
+      handleCheckClick={action('clicked')}
+      disabled={boolean('disabled', false)}
+    />
   )

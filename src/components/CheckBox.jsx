@@ -14,30 +14,19 @@ const styles = {
   checked: {},
 };
 
-class CustomCheckBox extends React.Component {
-  state = {
-    checked: true
-  }
-
-  handleChange = name => event => {
-    this.setState({ checked: event.target.checked })
-  }
-
-  render() {
-    const { classes } = this.props;
-
-    return (
-      <Checkbox
-        checked={this.state.checked}
-        onChange={this.handleChange('checkedA')}
-        value="checkbox"
-        classes={{
-          root: classes.root,
-          checked: classes.checked,
-        }}
-      />
-    )
-  }
+function CustomCheckBox({ classes, checked, handleCheckClick, disabled }) {
+  return (
+    <Checkbox
+      checked={checked}
+      onChange={(e) => handleCheckClick(e)}
+      value="checkbox"
+      disabled={disabled}
+      classes={{
+        root: classes.root,
+        checked: classes.checked,
+      }}
+    />
+  )
 }
 
 export default withStyles(styles)(CustomCheckBox);
