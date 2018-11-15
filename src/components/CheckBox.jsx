@@ -6,7 +6,6 @@ import Checkbox from '@material-ui/core/Checkbox'
 const styles = {
   root: {
     color: '#edf2f5',
-    backGroundColor: '#edf2f5',
     '&$checked': {
       color: '#4360DF',
     },
@@ -27,6 +26,18 @@ function CustomCheckBox({ classes, checked, handleCheckClick, disabled }) {
       }}
     />
   )
+}
+
+CustomCheckBox.defaultProps = {
+  disabled: false,
+  handleCheckClick: () => {}
+}
+
+CustomCheckBox.propTypes = {
+  classes: PropTypes.object.isRequired,
+  checked: PropTypes.bool.isRequired,
+  disabled: PropTypes.bool,
+  handleCheckClick: PropTypes.func
 }
 
 export default withStyles(styles)(CustomCheckBox);

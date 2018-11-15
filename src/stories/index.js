@@ -1,23 +1,23 @@
-import React from 'react';
-import 'typeface-roboto';
+import React from 'react'
+import 'typeface-roboto'
 
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
-import { withKnobs, text, boolean, number, object, select } from '@storybook/addon-knobs/react';
+import { storiesOf } from '@storybook/react'
+import { action } from '@storybook/addon-actions'
+import { linkTo } from '@storybook/addon-links'
+import { withKnobs, text, boolean, number, object, select } from '@storybook/addon-knobs/react'
 
-import { Welcome } from '@storybook/react/demo';
+import { Welcome } from '@storybook/react/demo'
 import AddIcon from '@material-ui/icons/Add'
-import Typography from '@material-ui/core/Typography';
-import MobileButton from '../components/MobileButton';
-import IconedButton from '../components/IconedButton';
-import MobileSearch from '../components/MobileSearch';
-import StatusWelcome from '../components/Welcome';
-import ChatyBase from '../components/ChatyBase';
-import DesktopButton from '../components/desktop/Button';
-import CenterWrapper from '../components/utils/CenterWrapper';
-import Toolbar from '../components/Toolbar';
-import Tabbar from '../components/Tabbar';
+import Typography from '@material-ui/core/Typography'
+import MobileButton from '../components/MobileButton'
+import IconedButton from '../components/IconedButton'
+import MobileSearch from '../components/MobileSearch'
+import StatusWelcome from '../components/Welcome'
+import ChatyBase from '../components/ChatyBase'
+import DesktopButton from '../components/desktop/Button'
+import CenterWrapper from '../components/utils/CenterWrapper'
+import Toolbar from '../components/Toolbar'
+import Tabbar from '../components/Tabbar'
 import Navigation from '../components/Navigation'
 import Chatbar from '../components/Chatbar'
 import SnackbarContent from '../components/SnackbarContent'
@@ -27,6 +27,7 @@ import BottomSheetItem from '../components/BottomSheetItem'
 import Badge from '../components/Badge'
 import Switch from '../components/Switch'
 import CheckBox from '../components/CheckBox'
+import Input from '../components/Input'
 
 storiesOf('Welcome', module)
   .add('To Status-Storybook', () => <StatusWelcome />)
@@ -236,5 +237,16 @@ storiesOf('Checkbox', module)
       checked={boolean('checked', false)}
       handleCheckClick={action('clicked')}
       disabled={boolean('disabled', false)}
+    />
+  )
+
+storiesOf('Input', module)
+  .addDecorator(withKnobs)
+  .add('Default', () =>
+    <Input
+      idFor={text('idFor', 'input')}
+      label={text('label', 'Input Label')}
+      placeholder={text('placeholder', 'Placeholder')}
+      handleInputField={action('input')}
     />
   )

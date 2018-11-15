@@ -63,8 +63,14 @@ function CustomizedSwitch({ classes, checked, handleSwitchClick }) {
   )
 }
 
+CustomizedSwitch.defaultProps = {
+  handleSwitchClick: () => {}
+}
+
 CustomizedSwitch.propTypes = {
   classes: PropTypes.object.isRequired,
+  checked: PropTypes.bool.isRequired,
+  handleSwitchClick: PropTypes.func
 }
 
 export default withStyles(styles)(CustomizedSwitch)
