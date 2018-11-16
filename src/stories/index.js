@@ -28,6 +28,7 @@ import Badge from '../components/Badge'
 import Switch from '../components/Switch'
 import CheckBox from '../components/CheckBox'
 import Input from '../components/Input'
+import Tooltip from '../components/Tooltip'
 
 storiesOf('Welcome', module)
   .add('To Status-Storybook', () => <StatusWelcome />)
@@ -249,4 +250,16 @@ storiesOf('Input', module)
       placeholder={text('placeholder', 'Placeholder')}
       handleInputField={action('input')}
     />
+  )
+
+storiesOf('Tooltip', module)
+  .addDecorator(withKnobs)
+  .add('Default', () =>
+    <Tooltip
+      title={text('title', 'Tooltip')}
+      bottom={boolean('bottom', false)}
+      error={boolean('error', false)}
+    >
+      <MobileButton style={{marginTop: '100px'}} text="Hover me" buttonType="primary" />
+    </Tooltip>
   )
