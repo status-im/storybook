@@ -130,60 +130,70 @@ storiesOf('Typography', module)
 storiesOf('Toolbar', module)
   .addDecorator(withKnobs)
   .add('default', () =>
-    <Toolbar
-      href={text('Link', 'https://github.com/status-im/storybook')}
-      content={text('Title', 'Your content here')}
-      handleNextClick={action('clicked')}
-      style={object('Styles', {})}
-    />
+    <CenterWrapper>
+      <Toolbar
+        href={text('Link', 'https://github.com/status-im/storybook')}
+        content={text('Title', 'Your content here')}
+        handleNextClick={action('clicked')}
+        style={object('Styles', {})}
+      />
+    </CenterWrapper>
   )
 
 storiesOf('Tab Bar', module)
   .addDecorator(withKnobs)
   .add('default', () =>
-    <Tabbar
-      style={object('Styles', {})}
-    />
+    <CenterWrapper>
+      <Tabbar
+        style={object('Styles', {})}
+      />
+    </CenterWrapper>
   )
 
 storiesOf('Navigation', module)
   .addDecorator(withKnobs)
   .add('default', () =>
-    <Navigation
-      handlePreviousClick={action('clicked')}
-      title={text('Title', 'Title text here')}
-      details={text('Subtitle', 'Subtitle text')}
-      primary={boolean('Primary Color', true)}
-      menu={boolean('Menu', true)}
-      handleMenuClick={action('clicked')}
-      style={object('Styles', {})}
-    />
+    <CenterWrapper>
+      <Navigation
+        handlePreviousClick={action('clicked')}
+        title={text('Title', 'Title text here')}
+        details={text('Subtitle', 'Subtitle text')}
+        primary={boolean('Primary Color', true)}
+        menu={boolean('Menu', true)}
+        handleMenuClick={action('clicked')}
+        style={object('Styles', {})}
+      />
+    </CenterWrapper>
   )
 
 storiesOf('Chatbar', module)
   .addDecorator(withKnobs)
   .add('default', () =>
-    <Chatbar
-      handlePreviousClick={action('clicked')}
-      name={text('Name', 'Username')}
-      avatarUrl={text('Avatar Url', 'https://avatars0.githubusercontent.com/u/18357049?s=400&u=efc262623265b5b527a8570faa590f9f29ae36d5&v=4')}
-      description={text('Description', 'Subtitle text')}
-      primary={boolean('Primary Color', true)}
-      menu={boolean('Menu', true)}
-      handleMenuClick={action('clicked')}
-      unreadMessages={number('Unread Messages', 10)}
-      style={object('Styles', {})}
-    />
+    <CenterWrapper>
+      <Chatbar
+        handlePreviousClick={action('clicked')}
+        name={text('Name', 'Username')}
+        avatarUrl={text('Avatar Url', 'https://avatars0.githubusercontent.com/u/18357049?s=400&u=efc262623265b5b527a8570faa590f9f29ae36d5&v=4')}
+        description={text('Description', 'Subtitle text')}
+        primary={boolean('Primary Color', true)}
+        menu={boolean('Menu', true)}
+        handleMenuClick={action('clicked')}
+        unreadMessages={number('Unread Messages', 10)}
+        style={object('Styles', {})}
+      />
+    </CenterWrapper>
   )
 
 storiesOf('Snackbar Content', module)
   .addDecorator(withKnobs)
   .add('default', () =>
-    <SnackbarContent
-      handleButtonClick={action('clicked')}
-      onClose={action('clicked')}
-      style={object('Styles', {})}
-    />
+    <CenterWrapper>
+      <SnackbarContent
+        handleButtonClick={action('clicked')}
+        onClose={action('clicked')}
+        style={object('Styles', {})}
+      />
+    </CenterWrapper>
   )
 
 storiesOf('BallotResult', module)
@@ -197,69 +207,82 @@ storiesOf('BallotResult', module)
 storiesOf('Bottom Sheet', module)
   .addDecorator(withKnobs)
   .add('Default', () =>
-    <BottomSheetExample
-    />
+    <CenterWrapper>
+      <BottomSheetExample />
+    </CenterWrapper>
   )
 
 storiesOf('Bottom Sheet Item', module)
   .addDecorator(withKnobs)
   .add('Default', () =>
-    <BottomSheetItem
-      handleOnClick={action('clicked')}
-      style={object('Styles', {})}
-      content={text('Content', 'Your content here')}
-      error={boolean('Error', false)}
-      icon={<AddIcon />}
-    />
+    <CenterWrapper>
+      <BottomSheetItem
+        handleOnClick={action('clicked')}
+        style={object('Styles', {})}
+        content={text('Content', 'Your content here')}
+        error={boolean('Error', false)}
+        icon={<AddIcon />}
+      />
+    </CenterWrapper>
   )
 
 storiesOf('Badge', module)
   .addDecorator(withKnobs)
   .add('Default', () =>
-    <Badge
-      count={number('count', 5)}
-      large={boolean('large', false)}
-    />
+    <CenterWrapper>
+      <Badge
+        count={number('count', 5)}
+        large={boolean('large', false)}
+      />
+    </CenterWrapper>
   )
 
 storiesOf('Switch', module)
   .addDecorator(withKnobs)
   .add('Default', () =>
-    <Switch
-      checked={boolean('checked', false)}
-      handleSwitchClick={action('clicked')}
-    />
+    <CenterWrapper>
+      <Switch
+        checked={boolean('checked', false)}
+        handleSwitchClick={action('clicked')}
+      />
+    </CenterWrapper>
   )
 
 storiesOf('Checkbox', module)
   .addDecorator(withKnobs)
   .add('Default', () =>
-    <CheckBox
-      checked={boolean('checked', false)}
-      handleCheckClick={action('clicked')}
-      disabled={boolean('disabled', false)}
-    />
+    <CenterWrapper>
+      <CheckBox
+        checked={boolean('checked', false)}
+        handleCheckClick={action('clicked')}
+        disabled={boolean('disabled', false)}
+      />
+    </CenterWrapper>
   )
 
 storiesOf('Input', module)
   .addDecorator(withKnobs)
   .add('Default', () =>
-    <Input
-      idFor={text('idFor', 'input')}
-      label={text('label', 'Input Label')}
-      placeholder={text('placeholder', 'Placeholder')}
-      handleInputField={action('input')}
-    />
+    <CenterWrapper>
+      <Input
+        idFor={text('idFor', 'input')}
+        label={text('label', 'Input Label')}
+        placeholder={text('placeholder', 'Placeholder')}
+        handleInputField={action('input')}
+      />
+    </CenterWrapper>
   )
 
 storiesOf('Tooltip', module)
   .addDecorator(withKnobs)
   .add('Default', () =>
-    <Tooltip
-      title={text('title', 'Tooltip')}
-      bottom={boolean('bottom', false)}
-      error={boolean('error', false)}
-    >
+    <CenterWrapper>
+      <Tooltip
+        title={text('title', 'Tooltip')}
+        bottom={boolean('bottom', false)}
+        error={boolean('error', false)}
+      >
       <MobileButton style={{marginTop: '100px'}} text="Hover me" buttonType="primary" />
-    </Tooltip>
+      </Tooltip>
+    </CenterWrapper>
   )
