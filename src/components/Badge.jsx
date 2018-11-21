@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import IconButton from '@material-ui/core/IconButton'
 import Badge from '@material-ui/core/Badge'
 import { withStyles } from '@material-ui/core/styles'
 
@@ -21,9 +20,7 @@ const styles = {
 
 function CustomizedBadge({ classes, count,  large }) {
   return (
-    <IconButton aria-label="Cart">
-      <Badge badgeContent={count} color="primary" classes={{ badge: large ? classes.large : classes.normal }} />
-    </IconButton>
+    <Badge badgeContent={count} color="primary" classes={{ badge: large ? classes.large : classes.normal }} />
   )
 }
 
