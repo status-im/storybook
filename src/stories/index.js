@@ -9,6 +9,7 @@ import { withKnobs, text, boolean, number, object, select } from '@storybook/add
 import { Welcome } from '@storybook/react/demo';
 import AddIcon from '@material-ui/icons/Add'
 import Typography from '@material-ui/core/Typography';
+import TextInputField from '../components/TextField';
 import MobileButton from '../components/MobileButton';
 import IconedButton from '../components/IconedButton';
 import MobileSearch from '../components/MobileSearch';
@@ -53,6 +54,9 @@ storiesOf('Button', module)
 storiesOf('IconedButton', module)
   .addDecorator(withKnobs)
   .add('default', () => <IconedButton color={text('color (name or hex)', 'white')} backgroundColor={text('background-color', '#00352c')} />);
+
+storiesOf('TextField', module)
+  .add('Default', () => <TextInputField style={object('Styles', {})} />)
 
 storiesOf('MobileSearch', module)
   .add('default', () => <MobileSearch />)
