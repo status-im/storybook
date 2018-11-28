@@ -66,8 +66,25 @@ function Cell({
   )
 }
 
+Cell.defaultProps = {
+  small: false,
+  imageUrl: '',
+  primaryText: '',
+  titleIcon: null,
+  secondaryText: '',
+  accessoryText: '',
+  secondComponent: null
+}
+
 Cell.propTypes = {
   classes: PropTypes.object.isRequired,
+  small: PropTypes.bool,
+  imageUrl: PropTypes.string,
+  primaryText: PropTypes.string,
+  titleIcon: PropTypes.node,
+  secondaryText: PropTypes.string,
+  accessoryText: PropTypes.string,
+  secondComponent: PropTypes.node
 }
 
 export default withStyles(styles)(Cell, Title)
