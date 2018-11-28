@@ -176,7 +176,7 @@ storiesOf('Chatbar', module)
       <Chatbar
         handlePreviousClick={action('clicked')}
         name={text('Name', 'Username')}
-        avatarUrl={text('Avatar Url', 'https://avatars0.githubusercontent.com/u/18357049?s=400&u=efc262623265b5b527a8570faa590f9f29ae36d5&v=4')}
+        avatarUrl={text('Avatar Url', 'https://status.im/img/status-logo-symbol.svg')}
         description={text('Description', 'Subtitle text')}
         primary={boolean('Primary Color', true)}
         menu={boolean('Menu', true)}
@@ -297,7 +297,7 @@ storiesOf('Cell item', module)
       <List>
         <Cell
           small={boolean('small', false)}
-          imageUrl={text('imageSrc', 'https://avatars0.githubusercontent.com/u/18357049?s=400&u=efc262623265b5b527a8570faa590f9f29ae36d5&v=4')}
+          imageUrl={text('imageSrc', 'https://status.im/img/status-logo-symbol.svg')}
           primaryText={text('primaryText', 'Title')}
           titleIcon={<AddIcon />}
           secondaryText={text('secondaryText', 'Subtitle')}
@@ -306,7 +306,7 @@ storiesOf('Cell item', module)
         />
         <Cell
           small={boolean('small', false)}
-          imageUrl={text('imageSrc', 'https://avatars0.githubusercontent.com/u/18357049?s=400&u=efc262623265b5b527a8570faa590f9f29ae36d5&v=4')}
+          imageUrl={text('imageSrc', 'https://status.im/img/status-logo-symbol.svg')}
           primaryText={text('primaryText', 'Title')}
           secondaryText={text('secondaryText', 'Subtitle')}
           accessoryText={text('accessoryText', 'Cell accessory')}
@@ -314,7 +314,7 @@ storiesOf('Cell item', module)
         />
         <Cell
           small={boolean('small', false)}
-          imageUrl={text('imageSrc', 'https://avatars0.githubusercontent.com/u/18357049?s=400&u=efc262623265b5b527a8570faa590f9f29ae36d5&v=4')}
+          imageUrl={text('imageSrc', 'https://status.im/img/status-logo-symbol.svg')}
           primaryText={text('primaryText', 'Title')}
           secondaryText={text('secondaryText', 'Subtitle')}
           accessoryText={text('accessoryText', 'Cell accessory')}
@@ -322,7 +322,7 @@ storiesOf('Cell item', module)
         />
         <Cell
           small={boolean('small', false)}
-          imageUrl={text('imageSrc', 'https://avatars0.githubusercontent.com/u/18357049?s=400&u=efc262623265b5b527a8570faa590f9f29ae36d5&v=4')}
+          imageUrl={text('imageSrc', 'https://status.im/img/status-logo-symbol.svg')}
           primaryText={text('primaryText', 'Title')}
           secondaryText={text('secondaryText', 'Subtitle')}
           accessoryText={text('accessoryText', 'Cell accessory')}
