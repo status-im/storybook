@@ -30,6 +30,8 @@ import CheckBox from '../components/CheckBox'
 import Input from '../components/Input'
 import Tooltip from '../components/Tooltip'
 import Cell from '../components/Cell'
+import List from '@material-ui/core/List'
+import ChevronRight from '@material-ui/icons/ChevronRight'
 
 storiesOf('Welcome', module)
   .add('To Status-Storybook', () => <StatusWelcome />)
@@ -292,15 +294,41 @@ storiesOf('Cell item', module)
   .addDecorator(withKnobs)
   .add('Default', () =>
     <CenterWrapper>
-      <Cell
-        small={boolean('small', false)}
-        chevron={boolean('chevron', false)}
-        imageUrl={text('imageSrc', 'https://avatars0.githubusercontent.com/u/18357049?s=400&u=efc262623265b5b527a8570faa590f9f29ae36d5&v=4')}
-        primaryText={text('primaryText', 'Title')}
-        secondaryText={text('secondaryText', 'Subtitle')}
-        accessoryText={text('accessoryText', 'Cell accessory')}
-        secondComponent={<CheckBox checked={boolean('checked', false)} handleCheckClick={action('check clicked')} />}
-      />
+      <List>
+        <Cell
+          small={boolean('small', false)}
+          imageUrl={text('imageSrc', 'https://avatars0.githubusercontent.com/u/18357049?s=400&u=efc262623265b5b527a8570faa590f9f29ae36d5&v=4')}
+          primaryText={text('primaryText', 'Title')}
+          titleIcon={<AddIcon />}
+          secondaryText={text('secondaryText', 'Subtitle')}
+          accessoryText={text('accessoryText', 'Cell accessory')}
+          secondComponent={<CheckBox checked={boolean('checked', false)} handleCheckClick={action('check clicked')} />}
+        />
+        <Cell
+          small={boolean('small', false)}
+          imageUrl={text('imageSrc', 'https://avatars0.githubusercontent.com/u/18357049?s=400&u=efc262623265b5b527a8570faa590f9f29ae36d5&v=4')}
+          primaryText={text('primaryText', 'Title')}
+          secondaryText={text('secondaryText', 'Subtitle')}
+          accessoryText={text('accessoryText', 'Cell accessory')}
+          secondComponent={<Switch checked={boolean('checked', false)} handleSwitchClick={action('clicked')} />}
+        />
+        <Cell
+          small={boolean('small', false)}
+          imageUrl={text('imageSrc', 'https://avatars0.githubusercontent.com/u/18357049?s=400&u=efc262623265b5b527a8570faa590f9f29ae36d5&v=4')}
+          primaryText={text('primaryText', 'Title')}
+          secondaryText={text('secondaryText', 'Subtitle')}
+          accessoryText={text('accessoryText', 'Cell accessory')}
+          secondComponent={<ChevronRight />}
+        />
+        <Cell
+          small={boolean('small', false)}
+          imageUrl={text('imageSrc', 'https://avatars0.githubusercontent.com/u/18357049?s=400&u=efc262623265b5b527a8570faa590f9f29ae36d5&v=4')}
+          primaryText={text('primaryText', 'Title')}
+          secondaryText={text('secondaryText', 'Subtitle')}
+          accessoryText={text('accessoryText', 'Cell accessory')}
+          secondComponent={<Badge count={number('count', 5)} />}
+        />
+      </List>
     </CenterWrapper>
   )
 

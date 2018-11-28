@@ -6,12 +6,14 @@ import { withStyles } from '@material-ui/core/styles'
 const styles = {
   normal: {
     backgroundColor: '#4360DF',
+    position: 'initial',
     left: '0px',
     height: '20px',
     width: '20px'
   },
   large: {
     backgroundColor: '#4360DF',
+    position: 'initial',
     left: '0px',
     height: '25px',
     width: '25px'
