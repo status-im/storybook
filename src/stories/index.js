@@ -32,6 +32,7 @@ import Tooltip from '../components/Tooltip'
 import Cell from '../components/Cell'
 import List from '@material-ui/core/List'
 import ChevronRight from '@material-ui/icons/ChevronRight'
+import PanTool from '@material-ui/icons/PanTool'
 
 storiesOf('Welcome', module)
   .add('To Status-Storybook', () => <StatusWelcome />)
@@ -299,7 +300,7 @@ storiesOf('Cell item', module)
           small={boolean('small', false)}
           imageUrl={text('imageSrc', 'https://status.im/img/status-logo-symbol.svg')}
           primaryText={text('primaryText', 'Title')}
-          titleIcon={<AddIcon />}
+          titleIcon={<PanTool />}
           secondaryText={text('secondaryText', 'Subtitle')}
           accessoryText={text('accessoryText', 'Cell accessory')}
           secondComponent={<CheckBox checked={boolean('checked', false)} handleCheckClick={action('check clicked')} />}

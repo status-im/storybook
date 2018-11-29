@@ -10,7 +10,7 @@ import Avatar from '@material-ui/core/Avatar'
 const styles = {
   dense: {
     margin: '10px',
-    padding: 0,
+    padding: '0 5px 0 0',
     backgroundColor: 'white'
   },
   root: {
