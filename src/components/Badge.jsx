@@ -20,12 +20,13 @@ const styles = {
   }
 }
 
-function CustomizedBadge({ classes, count,  large, children }) {
+function CustomizedBadge({ classes, count,  large, children, style }) {
   return (
     <Badge
       badgeContent={count > 9 ? '9+' : count }
       color="primary"
       children={children}
+      style={{...style}}
       classes={{ badge: large ? classes.large : classes.normal }}
     >
     </Badge>
@@ -33,14 +34,16 @@ function CustomizedBadge({ classes, count,  large, children }) {
 }
 
 CustomizedBadge.defaultProps = {
-  children: <div/>
+  children: <div/>,
+  style: {}
 }
 
 
 CustomizedBadge.propTypes = {
   classes: PropTypes.object.isRequired,
   count: PropTypes.number.isRequired,
-  children: PropTypes.node
+  children: PropTypes.node,
+  style: PropTypes.shape
 }
 
 export default withStyles(styles)(CustomizedBadge)

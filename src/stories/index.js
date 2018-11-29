@@ -33,6 +33,7 @@ import Cell from '../components/Cell'
 import List from '@material-ui/core/List'
 import ChevronRight from '@material-ui/icons/ChevronRight'
 import PanTool from '@material-ui/icons/PanTool'
+import Done from '@material-ui/icons/Done'
 
 storiesOf('Welcome', module)
   .add('To Status-Storybook', () => <StatusWelcome />)
@@ -300,6 +301,13 @@ storiesOf('Cell item', module)
           small={boolean('small', false)}
           imageUrl={text('imageSrc', 'https://status.im/img/status-logo-symbol.svg')}
           primaryText={text('primaryText', 'Title')}
+          secondaryText={text('secondaryText', 'Subtitle')}
+          accessoryText={text('accessoryText', 'Cell accessory')}
+        />
+        <Cell
+          small={boolean('small', false)}
+          imageUrl={text('imageSrc', 'https://status.im/img/status-logo-symbol.svg')}
+          primaryText={text('primaryText', 'Title')}
           titleIcon={<PanTool />}
           secondaryText={text('secondaryText', 'Subtitle')}
           accessoryText={text('accessoryText', 'Cell accessory')}
@@ -319,7 +327,7 @@ storiesOf('Cell item', module)
           primaryText={text('primaryText', 'Title')}
           secondaryText={text('secondaryText', 'Subtitle')}
           accessoryText={text('accessoryText', 'Cell accessory')}
-          secondComponent={<ChevronRight />}
+          secondComponent={<ChevronRight style={{marginRight: '5px'}} />}
         />
         <Cell
           small={boolean('small', false)}
@@ -327,7 +335,15 @@ storiesOf('Cell item', module)
           primaryText={text('primaryText', 'Title')}
           secondaryText={text('secondaryText', 'Subtitle')}
           accessoryText={text('accessoryText', 'Cell accessory')}
-          secondComponent={<Badge count={number('count', 5)} />}
+          secondComponent={<Badge style={{marginRight: '10px'}} count={number('count', 5)} />}
+        />
+        <Cell
+          small={boolean('small', false)}
+          imageUrl={text('imageSrc', 'https://status.im/img/status-logo-symbol.svg')}
+          primaryText={text('primaryText', 'Title')}
+          secondaryText={text('secondaryText', 'Subtitle')}
+          accessoryText={text('accessoryText', 'Cell accessory')}
+          secondComponent={<Done style={{marginRight: '10px', color: '#4360DF'}} />}
         />
       </List>
     </CenterWrapper>
