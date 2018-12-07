@@ -29,6 +29,11 @@ import Switch from '../components/Switch'
 import CheckBox from '../components/CheckBox'
 import Input from '../components/Input'
 import Tooltip from '../components/Tooltip'
+import Cell from '../components/Cell'
+import List from '@material-ui/core/List'
+import ChevronRight from '@material-ui/icons/ChevronRight'
+import PanTool from '@material-ui/icons/PanTool'
+import Done from '@material-ui/icons/Done'
 
 storiesOf('Welcome', module)
   .add('To Status-Storybook', () => <StatusWelcome />)
@@ -173,7 +178,7 @@ storiesOf('Chatbar', module)
       <Chatbar
         handlePreviousClick={action('clicked')}
         name={text('Name', 'Username')}
-        avatarUrl={text('Avatar Url', 'https://avatars0.githubusercontent.com/u/18357049?s=400&u=efc262623265b5b527a8570faa590f9f29ae36d5&v=4')}
+        avatarUrl={text('Avatar Url', 'https://status.im/img/status-logo-symbol.svg')}
         description={text('Description', 'Subtitle text')}
         primary={boolean('Primary Color', true)}
         menu={boolean('Menu', true)}
@@ -282,7 +287,65 @@ storiesOf('Tooltip', module)
         bottom={boolean('bottom', false)}
         error={boolean('error', false)}
       >
-      <MobileButton style={{marginTop: '100px'}} text="Hover me" buttonType="primary" />
+        <MobileButton style={{marginTop: '100px'}} text="Hover me" buttonType="primary" />
       </Tooltip>
     </CenterWrapper>
   )
+
+storiesOf('Cell item', module)
+  .addDecorator(withKnobs)
+  .add('Default', () =>
+    <CenterWrapper>
+      <List>
+        <Cell
+          small={boolean('small', false)}
+          imageUrl={text('imageSrc', 'https://status.im/img/status-logo-symbol.svg')}
+          primaryText={text('primaryText', 'Title')}
+          secondaryText={text('secondaryText', 'Subtitle')}
+          accessoryText={text('accessoryText', 'Cell accessory')}
+        />
+        <Cell
+          small={boolean('small', false)}
+          imageUrl={text('imageSrc', 'https://status.im/img/status-logo-symbol.svg')}
+          primaryText={text('primaryText', 'Title')}
+          titleIcon={<PanTool />}
+          secondaryText={text('secondaryText', 'Subtitle')}
+          accessoryText={text('accessoryText', 'Cell accessory')}
+          secondComponent={<CheckBox checked={boolean('checked', false)} handleCheckClick={action('check clicked')} />}
+        />
+        <Cell
+          small={boolean('small', false)}
+          imageUrl={text('imageSrc', 'https://status.im/img/status-logo-symbol.svg')}
+          primaryText={text('primaryText', 'Title')}
+          secondaryText={text('secondaryText', 'Subtitle')}
+          accessoryText={text('accessoryText', 'Cell accessory')}
+          secondComponent={<Switch checked={boolean('checked', false)} handleSwitchClick={action('clicked')} />}
+        />
+        <Cell
+          small={boolean('small', false)}
+          imageUrl={text('imageSrc', 'https://status.im/img/status-logo-symbol.svg')}
+          primaryText={text('primaryText', 'Title')}
+          secondaryText={text('secondaryText', 'Subtitle')}
+          accessoryText={text('accessoryText', 'Cell accessory')}
+          secondComponent={<ChevronRight style={{marginRight: '5px'}} />}
+        />
+        <Cell
+          small={boolean('small', false)}
+          imageUrl={text('imageSrc', 'https://status.im/img/status-logo-symbol.svg')}
+          primaryText={text('primaryText', 'Title')}
+          secondaryText={text('secondaryText', 'Subtitle')}
+          accessoryText={text('accessoryText', 'Cell accessory')}
+          secondComponent={<Badge style={{marginRight: '10px'}} count={number('count', 5)} />}
+        />
+        <Cell
+          small={boolean('small', false)}
+          imageUrl={text('imageSrc', 'https://status.im/img/status-logo-symbol.svg')}
+          primaryText={text('primaryText', 'Title')}
+          secondaryText={text('secondaryText', 'Subtitle')}
+          accessoryText={text('accessoryText', 'Cell accessory')}
+          secondComponent={<Done style={{marginRight: '10px', color: '#4360DF'}} />}
+        />
+      </List>
+    </CenterWrapper>
+  )
+
